@@ -1,0 +1,13 @@
+name = "Offshore_Profit_Shifting_Replication"
+uuid = "ae241874-ac1d-4eac-9e5c-6042b464c359"
+authors = ["Daniel Fichmann <daniel.fichmann@icloud.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.8"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
