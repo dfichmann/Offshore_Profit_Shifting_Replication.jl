@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"","page":"Home","title":"Home","text":"CurrentModule = Offshore_Profit_Shifting_Replication","category":"page"},{"location":"#Offshore*Profit*Shifting_Replication","page":"Home","title":"OffshoreProfitShifting_Replication","text":"","category":"section"},{"location":"","page":"Home","title":"Home","text":"Documentation for OffshoreProfitShifting_Replication.","category":"page"},{"location":"","page":"Home","title":"Home","text":"","category":"page"},{"location":"","page":"Home","title":"Home","text":"Modules = [Offshore_Profit_Shifting_Replication]","category":"page"}]
+}
