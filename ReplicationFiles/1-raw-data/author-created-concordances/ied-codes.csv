@@ -1,0 +1,41 @@
+﻿IED Code,Description,NAICS,NAICS Description
+1100,"Agriculture, forestry, fishing, and hunting",11,"Agriculture, forestry, fishing, and hunting"
+2100,Mining,21,Mining
+2200,Utilities,22,Utilities
+2300,Construction,23,Construction
+3110,Food and beverage and tobacco products,31,"Food, textiles, apparel"
+3130,Textile mills and textile product mills,31,"Food, textiles, apparel"
+3150,Apparel and leather and allied products,31,"Food, textiles, apparel"
+3210,Wood products,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3220,Paper products,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3230,Printing and related support activities,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3240,Petroleum and coal products,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3250,Chemical products,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3260,Plastics and rubber products,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3270,Nonmetallic mineral products,32,"Wood, paper, printing, petroleum, chemicals, plastics"
+3310,Primary metals,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3320,Fabricated metal products,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3330,Machinery,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3340,Computer and electronic products,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3350,"Electrical equipment, appliances, and components",33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3361,"Motor vehicles, bodies and trailers, and parts",33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3364,Other transportation equipment,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3370,Furniture and related products,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+3390,Miscellaneous manufacturing,33,"Metals, machinery, computers, electrical equipment, motor vehicles, furniture"
+4200,Wholesale trade,42,Wholesale trade
+4400,Retail trade,44,Retail trade
+4800,Transportation and warehousing,48,Transportation and warehousing
+5110,Publishing industries,51,Information
+5120,Motion picture and sound recording industries,51,Information
+5130,Broadcasting and telecommunications,51,Information
+5140,Information and data processing services,51,Information
+5200,Finance and insurance,52,Finance and insurance
+5300,Real estate and rental and leasing,53,Real estate and rental and leasing
+5411,Legal services,54,Professional and business services
+5412,"Miscellaneous professional, scientific, and technical services",54,Professional and business services
+5415,Computer systems design and related services,54,Professional and business services
+5500,Management of companies and enterprises,55,Management of companies and enterprises
+5600,Administrative and waste management services,56,Administrative and waste management services
+6000,"Educational services, health care, and social assistance",60,"Educational services, health care, and social assistance"
+7000,"Arts, entertainment, recreation, accommodation, and food services",70,"Arts, entertainment, recreation, accommodation, and food services"
+8000,"Other services, except government",80,"Other services, except government"

@@ -1,0 +1,98 @@
+"Table 6.5B. Full-Time Equivalent Employees by Industry"
+"[Thousands]" 
+"Bureau of Economic Analysis" 
+"Last Revised on: July 30, 2021"
+"Line","","1982","1983","1984","1985","1986","1987"
+"","","","","","","",""
+"1","            Full-time equivalent employees1",85822,86353,90628,92978,94654,97303
+"2","Domestic industries",85886,86423,90701,93050,94721,97369
+"3","    Private industries",69715,70368,74437,76433,77766,80132
+"4","        Agriculture, forestry, and fishing",1463,1569,1488,1394,1381,1455
+"5","            Farms",1022,1106,995,863,816,826
+"6","            Agricultural services, forestry, and fishing",441,463,493,531,565,629
+"7","        Mining",1108,939,958,914,765,707
+"8","            Metal mining",74,58,56,47,43,45
+"9","            Coal mining",237,190,196,187,173,159
+"10","            Oil and gas extraction",689,586,598,571,441,394
+"11","            Nonmetallic minerals, except fuels",108,105,108,109,108,109
+"12","        Construction",3740,3797,4257,4514,4667,4755
+"13","        Manufacturing",18249,17935,18888,18754,18463,18571
+"14","            Durable goods",10844,10558,11340,11310,11039,11012
+"15","                Lumber and wood products",572,632,685,673,682,723
+"16","                Furniture and fixtures",413,442,473,475,485,501
+"17","                Stone, clay, and glass products",560,556,585,577,573,575
+"18","                Primary metal industries",900,819,849,799,742,735
+"19","                Fabricated metal products",1398,1342,1438,1438,1398,1377
+"20","                Machinery, except electrical",2208,1996,2167,2150,2014,1989
+"21","                Electric and electronic equipment",1989,1995,2181,2165,2093,2048
+"22","                Motor vehicles and equipment",702,750,847,872,863,844
+"23","                Other transportation equipment",1023,980,1042,1095,1143,1180
+"24","                Instruments and related products",705,685,700,708,690,676
+"25","                Miscellaneous manufacturing industries",374,361,373,358,356,364
+"26","            Nondurable goods",7405,7377,7548,7444,7424,7559
+"27","                Food and kindred products",1564,1534,1532,1523,1533,1550
+"28","                Tobacco manufactures",66,64,62,62,57,54
+"29","                Textile mill products",715,720,722,678,686,710
+"30","                Apparel and other textile products",1091,1098,1133,1061,1045,1055
+"31","                Paper and allied products",652,653,669,668,665,675
+"32","                Printing and publishing",1165,1192,1266,1315,1345,1393
+"33","                Chemicals and allied products",1076,1042,1043,1037,1013,1014
+"34","                Petroleum and coal products",190,185,178,170,162,159
+"35","                Rubber and miscellaneous plastics products",676,694,765,770,776,810
+"36","                Leather and leather products",210,195,178,160,142,139
+"37","        Transportation and public utilities",4844,4755,4924,4979,5010,5119
+"38","            Transportation",2670,2629,2794,2863,2913,3026
+"39","                Railroad transportation",413,349,348,324,297,276
+"40","                Local and interurban passenger transit",246,249,260,268,276,286
+"41","                Trucking and warehousing2",1164,1178,1277,1320,1352,1420
+"42","                Water transportation",199,186,188,182,174,171
+"43","                Transportation by air2",421,429,461,490,527,572
+"44","                Pipelines, except natural gas",21,21,19,19,18,18
+"45","                Transportation services",206,217,241,260,269,283
+"46","            Communication",1319,1264,1255,1226,1201,1191
+"47","                Telephone and telegraph",1112,1050,1035,1003,976,969
+"48","                Radio and television",207,214,220,223,225,222
+"49","            Electric, gas, and sanitary services",855,862,875,890,896,902
+"50","        Wholesale trade",5103,5069,5347,5472,5512,5649
+"51","        Retail trade",12325,12689,13620,14326,14734,15254
+"52","        Finance, insurance, and real estate",5204,5337,5555,5765,6051,6306
+"53","            Banking",1580,1583,1598,1621,1649,1656
+"54","            Credit agencies other than banks",562,615,678,726,803,860
+"55","            Security and commodity brokers",264,299,327,342,379,428
+"56","            Insurance carriers",1235,1229,1247,1279,1338,1380
+"57","            Insurance agents, brokers, and service",467,481,504,532,557,583
+"58","            Real estate",952,984,1041,1094,1141,1183
+"59","            Holding and other investment offices",144,146,160,171,184,216
+"60","        Services",17679,18278,19400,20315,21183,22316
+"61","            Hotels and other lodging places",1015,1042,1129,1192,1229,1295
+"62","            Personal services",850,878,930,972,996,1046
+"63","            Business services",3018,3236,3727,4066,4391,4780
+"64","            Auto repair, services, and parking",610,638,699,746,775,810
+"65","            Miscellaneous repair services",281,279,306,313,310,313
+"66","            Motion pictures",185,188,187,193,197,197
+"67","            Amusement and recreation services",646,665,688,695,709,733
+"68","            Health services",5314,5472,5600,5778,6000,6255
+"69","            Legal services",539,573,611,655,704,762
+"70","            Educational services",1198,1236,1298,1329,1356,1421
+"71","            Social services and membership organizations",2267,2299,2349,2420,2513,2655
+"72","                Social services",956,1002,1053,1124,1203,1278
+"73","                Membership organizations",1311,1297,1296,1296,1310,1377
+"74","            Miscellaneous professional services",1029,1058,1124,1204,1254,1318
+"75","            Private households",727,714,752,752,749,731
+"76","    Government",16171,16055,16264,16617,16955,17237
+"77","        Federal",5141,5130,5230,5275,5268,5314
+"78","            General government",4319,4334,4395,4442,4445,4489
+"79","                Civilian",2026,2026,2067,2098,2088,2121
+"80","                Military3",2293,2308,2328,2344,2357,2368
+"81","            Government enterprises",822,796,835,833,823,825
+"82","        State and local",11030,10925,11034,11342,11687,11923
+"83","            General government",10293,10195,10292,10578,10905,11129
+"84","                Education",5153,5170,5226,5411,5609,5648
+"85","                Other",5140,5025,5066,5167,5296,5481
+"86","            Government enterprises",737,730,742,764,782,794
+"87","Rest of the world",-64,-70,-73,-72,-67,-66
+"Legend / Footnotes:"
+"1. Full-time equivalent employees equals the number of employees on full-time schedules plus the number of employees on part-time schedules converted to a full-time basis. The number of full-time equivalent employees in each industry is the product of the total number of employees and the ratio of average weekly hours per employee for all employees to the average weekly hours per employee on full-time schedules."
+"2. Beginning with 1987, reflects the reclassification of air couriers from trucking and warehousing to transportation by air."
+"3. Includes Coast Guard."
+"Note. Estimates in this table are based on the 1972 Standard Industrial Classification (SIC)."
