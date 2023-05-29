@@ -1,0 +1,15 @@
+using Offshore_Profit_Shifting_Replication
+
+Offshore_Profit_Shifting_Replication.plots1()
+Offshore_Profit_Shifting_Replication.plots2()
+Offshore_Profit_Shifting_Replication.plots3()
+Offshore_Profit_Shifting_Replication.plots4()
+Offshore_Profit_Shifting_Replication.plots6()
+Offshore_Profit_Shifting_Replication.plots7()
+Offshore_Profit_Shifting_Replication.plots8()
+Offshore_Profit_Shifting_Replication.plots9()
+Offshore_Profit_Shifting_Replication.plots10()
+
+Offshore_Profit_Shifting_Replication.table1()
+Offshore_Profit_Shifting_Replication.table5()
+Offshore_Profit_Shifting_Replication.table6()
