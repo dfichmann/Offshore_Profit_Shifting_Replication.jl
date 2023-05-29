@@ -1,5 +1,11 @@
 """
 This function replicates a figure 10, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+
+    # Usage
+```julia
+plots10()
+
+No arguments are needed for this function
 """
 function plots10()
     gr()

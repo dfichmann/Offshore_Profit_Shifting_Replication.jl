@@ -1,6 +1,12 @@
 """
 This function replicates a figure 4, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
-"""
+
+    # Usage
+    ```julia
+    plots4()
+    
+    No arguments are needed for this function
+    """
 function plots4()
     gr()
     # Creating a layout with 1 row and 2 columns

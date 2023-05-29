@@ -1,5 +1,22 @@
 """
-This function replicates a figure 3, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+    plots3()
+
+Generates a two-panel figure, each panel representing a distinct subplot related to the petroleum industry and its impact on the business-sector value.
+
+- **Panel A**: Displays the petroleum prices over the years from 1980 to 2018. The petroleum prices are depicted as a black line in dollars per barrel. 
+
+- **Panel B**: Illustrates two distinct measures over the same period: The Weighted Adjustment of all industries (blue line) and the adjustment excluding petroleum industry (red dashed line). Both are represented as a share of the business-sector value added, in percent.
+
+The figure is saved as a PDF in the folder "ReplicationFiles/figures" with the name "Figure3.pdf".
+
+This function uses the GR backend for generating plots and the Plots.jl package for constructing the multi-panel figure.
+
+# Usage
+```julia
+plots3()
+
+No arguments are needed for this function
+
 """
 function plots3()
     # Set the GR backend

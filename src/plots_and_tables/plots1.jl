@@ -1,7 +1,26 @@
 ############# FIGURE 1 ###################
 """
-This function replicates a figure 1, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+    plots1()
+
+Creates a two-panel figure which shows the share of business-sector value added as a percentage for USDIA Income and Weighted Adjustment across years in panel A and their respective dollar values in panel B. 
+
+Each panel represents a distinct subplot:
+
+- **Panel A**: Displays the USDIA Income and Weighted Adjustment as a percentage of business-sector value added from 1980 to 2018. The USDIA Income is represented by a black line, while the Weighted Adjustment is depicted in blue.
+
+- **Panel B**: Shows the USDIA Income and Weighted Adjustment in billions of dollars from 1980 to 2018. Similar to panel A, the USDIA Income is shown as a black line, and the Weighted Adjustment is shown as a blue line.
+
+The resulting figure is saved as a PDF in the folder "ReplicationFiles/figures" with the name "Figure1.pdf".
+
+This function employs the GR backend for generating plots and uses the Plots.jl package for constructing the multi-panel figure.
+
+# Usage
+```julia
+plots1()
+
+No arguments are needed for this function.
 """
+
 function plots1()
     # Set the GR backend
     gr()

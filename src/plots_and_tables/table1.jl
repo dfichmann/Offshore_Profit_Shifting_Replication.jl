@@ -1,5 +1,11 @@
 """
 This function replicates table 1. The Table is saved in the folder "ReplicationFiles/tables" as a markdown file.
+
+    # Usage
+```julia
+table1()
+
+No arguments are needed for this function
 """
 function table1()
     # The list of countries to filter the final table

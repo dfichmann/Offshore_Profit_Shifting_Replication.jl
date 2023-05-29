@@ -1,6 +1,25 @@
 """
-This function replicates a figure 2, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+    plots2()
+
+Generates a two-panel figure which displays the USDIA Income and its Weighted Adjustment, along with the Compensation, PPE, and R&D adjustments in billions of dollars from 1980 to 2018. 
+
+Each panel represents a distinct subplot:
+
+- **Panel A**: Illustrates the USDIA Income, Weighted Adjustment, Compensation, PPE, and R&D adjustments over the specified period. The USDIA Income is shown as a black line, the Weighted Adjustment is depicted in blue, the Compensation adjustment in a dashed red line, the PPE adjustment in a dash-dotted black line, and the R&D adjustment in a dotted green line.
+
+- **Panel B**: Displays the USDIA Income and Weighted Adjustment, with additional statistical information like +/-2 standard deviations range shown in light blue, and the 25th and 75th percentiles shown with dashed black lines.
+
+The figure is saved as a PDF in the folder "ReplicationFiles/figures" with the name "Figure2.pdf".
+
+This function uses the GR backend for generating plots and the Plots.jl package for constructing the multi-panel figure.
+
+# Usage
+```julia
+plots2()
+
+No arguments needed for this function
 """
+
 function plots2()
 # Set the GR backend
 gr()
