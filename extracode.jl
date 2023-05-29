@@ -319,3 +319,80 @@ ax.set_xlim(1981, 2017)
 ax.text(2006, -0.014, 'Adjusted')
 ax.set_ylabel('share of GDP')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+iadj_ITP = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetITP.xlsx", "ADJITPSCALE"))
+    rename!(iadj_ITP, ["year", "indgroup", "adjcomps", "adjsales", "adjrdstks", "adjppes", "adjwt3s"])
+    unique_indgroup = unique(iadj_ITP[!, :indgroup])
+    unique_year = collect(1982:2016)
+    # Create the dataset with all combinations
+    fullcombdf = DataFrame(year = repeat(unique_year, outer = length(unique_indgroup)),
+                        indgroup = repeat(unique_indgroup, inner = length(unique_year)))
+    # Sort the dataset by Year and IEDindPar
+     sort!(fullcombdf, [:year, :indgroup])
+    # Convert missing values to missing type
+    iadj_ITP = coalesce.(iadj_ITP, missing)
+    names(iadj_ITP)
+    # Interpolate missing values in adj_agg DataFrame
+    iadj_ITP = Impute.interp(iadj_ITP)
+
+    iadj_ITU = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetITU.xlsx", "ADJITUSCALE"))
+    rename!(iadj_ITU, ["year", "indgroup", "adjcomps", "adjsales", "adjrdstks", "adjppes", "adjwt3s"])
+    unique_indgroup = unique(iadj_ITU[!, :indgroup])
+    unique_year = collect(1982:2016)
+    # Create the dataset with all combinations
+    fullcombdf = DataFrame(year = repeat(unique_year, outer = length(unique_indgroup)),
+                        indgroup = repeat(unique_indgroup, inner = length(unique_year)))
+    # Sort the dataset by Year and IEDindPar
+     sort!(fullcombdf, [:year, :indgroup])
+    # Convert missing values to missing type
+    iadj_ITU = coalesce.(iadj_ITU, missing)
+    names(iadj_ITU)
+    # Interpolate missing values in adj_agg DataFrame
+    iadj_ITU = Impute.interp(iadj_ITU)
+
+    iadj_RD = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetRD.xlsx", "ADJRDSCALE"))
+    rename!(iadj_RD, ["year", "indgroup", "adjcomps", "adjsales", "adjrdstks", "adjppes", "adjwt3s"])
+    unique_indgroup = unique(iadj_RD[!, :indgroup])
+    unique_year = collect(1982:2016)
+    # Create the dataset with all combinations
+    fullcombdf = DataFrame(year = repeat(unique_year, outer = length(unique_indgroup)),
+                        indgroup = repeat(unique_indgroup, inner = length(unique_year)))
+    # Sort the dataset by Year and IEDindPar
+     sort!(fullcombdf, [:year, :indgroup])
+    # Convert missing values to missing type
+    iadj_RD = coalesce.(iadj_RD, missing)
+    names(iadj_RD)
+    # Interpolate missing values in adj_agg DataFrame
+    iadj_RD = Impute.interp(iadj_RD)
+
+
+    
+
+    # Select desired columns
+    iadj_RD = iadj_RD[:, [:year, :indgroup, :adjwt3s]]
+    
+    # Unstack DataFrame
+    iadj_RD = unstack(iadj_RD, :indgroup, :adjwt3s)
+    
+    # Rename columns
+    rename!(iadj_RD, Dict(Symbol("1") => :rd, Symbol("0") => :nrd))
+    

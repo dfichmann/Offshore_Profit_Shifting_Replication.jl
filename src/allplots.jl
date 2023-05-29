@@ -1,62 +1,5 @@
-using Plots
-using Statistics
-
-function makedataforf2()
-    boot = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAggStdError.xlsx", "STACKAGGADJ"))
-    println(boot[1, :])
-    
-    # Get unique values from the columns
-    unique_Panel = unique(boot[!, :Panel])
-    unique_Year = collect(1982:2016)
-    
-    # Create the dataset with all combinations
-    fullcombdf = DataFrame(Year = repeat(unique_Year, outer = length(unique_Panel)),
-                    Panel = repeat(unique_Panel, inner = length(unique_Year)))
-    
-    # Sort the dataset by Year and IEDindPar
-    sort!(fullcombdf, [:Year, :Panel])
-    
-    # Join the full combinations dataset with adj_ind
-    boot = leftjoin(fullcombdf, boot, on = [:Year, :Panel])
-       
-    sort!(boot, [:Panel, :Year])
-    
-    boot = coalesce.(boot, missing)
-    
-    # Check the updated column type
-    println(typeof(boot.Adjustment))
-    # Interpolate missing values
-    boot = Impute.interp(boot)
-    println(boot)
-    
-    #compute statistics across panels for each Year
-    merged_df = innerjoin(boot, public, on = (:Year => :year))
-    
-    merged_df.adjustment_deflated = merged_df.Adjustment ./ merged_df.gva_deflator.* -1
-    
-    # Display the updated merged data frame
-    print(merged_df)
-    
-    # Group the merged data frame by Panel
-    grouped_df = groupby(merged_df, :Year)
-    
-    # Calculate the statistics for each Panel
-    panel_stats = combine(grouped_df) do df
-        DataFrame(
-            mean__adjustment = mean(df.adjustment_deflated),
-            std__adjustment = std(df.adjustment_deflated),
-            q25__adjustment = quantile(df.adjustment_deflated, 0.25),
-            q75__adjustment = quantile(df.adjustment_deflated, 0.75)
-        )
-    end
-    
-    print(panel_stats)
-    end
 
 
-
-
-savefolder = "ReplicationFiles/4-figures"
 
 ############# FIGURE 1 ###################
 function plots1()
@@ -122,10 +65,6 @@ xlabel!(p[1], "Year", fontfamily="Arial", fontsize=12)
 ylabel!(p[1], "Billions of dollars", fontfamily="Arial", fontsize=12)
 title!(p[1], "Replicated Figure 2A", fontfamily="Arial", fontsize=14, fontweight="bold")
 
-
-##################
-makedataforf2()  #
-##################
 # Plotting the data with customized aesthetics
 Plots.plot!(p[2], public.year, public.usdiaincn ./ public.gva_deflator,
     color = :black, label = "USDIA Income", legend = :topleft, linewidth = 3)
@@ -207,7 +146,7 @@ plots3()
 
 ############# FIGURE 4 ###################
 
-# Set the GR backend
+
 function plots4()
 gr()
 # Creating a layout with 1 row and 2 columns
@@ -302,54 +241,170 @@ plots6()
 
 ############# FIGURE 7 ###################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Translate PYTHON to JULIA
-### here is the PYTHON code:
-public['gdibusn'] = public['gdin'] - (public['gdpn']-public['gvabusn'])
-public['gdibusr'] = public['gdibusn'] / public['gva_deflator']
-
-prod=pd.DataFrame()
-prod['uprod_log'] = np.log((public['gvabusr']*public['gdibusr'] )**(1/2)/public['hrs'])
-prod['uprod_gr'] = prod['uprod_log'].diff()*100
-prod['uprod_cum'] = (prod['uprod_log'] - prod.loc[1982,'uprod_log'])*100
-
-prod['gvabusr_adj'] = (public['gvabusn']-adj_agg['adjearn3s_cca'])/public['gva_deflator']
-prod['gdibusr_adj'] = (public['gdibusn']-adj_agg['adjearn3s_cca'])/public['gva_deflator']
-prod['aprod_log'] = np.log((prod['gvabusr_adj']*prod['gdibusr_adj'] )**(1/2)/public['hrs'])
-prod['aprod_gr'] = prod['aprod_log'].diff()*100
-prod['aprod_cum'] = (prod['aprod_log'] - prod.loc[1982,'aprod_log'])*100
-
-### JULIA code 
+function plots7()
 public.gdibusn = public.gdin - (public.gdpn .- public.gvabusn)
 public.gdibusr = public.gdibusn ./ public.gva_deflator
 
-prod = DataFrame()
+prod = DataFrame(Year = public.year)
 prod.uprod_log = log.((public.gvabusr .* public.gdibusr).^(1/2) ./ public.hrs)
-uprod_gr = diff(prod.uprod_log) .* 100
-prod.uprod_cum = (prod.uprod_log .- prod.uprod_log[1982]) .* 100
+
+prod.uprod_gr = [missing;diff(prod.uprod_log) .* 100]
+prod.uprod_cum = (prod.uprod_log .- prod.uprod_log[1]) .* 100
 
 prod.gvabusr_adj = (public.gvabusn .- adj_agg.adjearn3s_cca) ./ public.gva_deflator
 prod.gdibusr_adj = (public.gdibusn .- adj_agg.adjearn3s_cca) ./ public.gva_deflator
 prod.aprod_log = log.((prod.gvabusr_adj .* prod.gdibusr_adj).^(1/2) ./ public.hrs)
-prod.aprod_gr = diff(prod.aprod_log) .* 100
+prod.aprod_gr = [missing; diff(prod.aprod_log) .* 100]
+prod.aprod_cum = (prod.aprod_log .- prod.aprod_log[1]) .* 100 
 
-prod.aprod_cum = (prod.aprod_log .- prod.aprod_log[1982]) .* 100 ????
+gr()
+# Creating a layout with 1 row and 2 columns
+layout = @layout([a b])
+# Creating a new plot with the specified layout
+p = Plots.plot(layout=layout, size=(1000, 400), margins = 10Plots.mm)
+
+Plots.plot!(p[1], prod.Year, prod.uprod_cum, color = :black, label = "Unadjusted", linewidth=2)
+Plots.plot!(p[1], prod.Year, prod.aprod_cum, color = :blue, label = "Adjusted", linewidth=2)
+
+xlims!(p[1], 1981, 2017)
+ylims!(p[1], -2, 75)
+xlabel!(p[1], "Year", fontfamily="Arial", fontsize=12)
+ylabel!(p[1], "log percent", fontfamily="Arial", fontsize=12)
+title!(p[1], "Replicated Figure 7A", fontfamily="Arial", fontsize=12, fontweight="bold")
+
+#add two vertical lines at year 1994 and 2004
+vline!(p[1], [1994, 2004], color = :black, linewidth = 2, label = :none) 
+
+Plots.plot!(p[2], prod.Year, prod.aprod_cum .- prod.uprod_cum, color = :blue, label = "Adjusted", linewidth=2)
+
+xlims!(p[2], 1981, 2017)
+ylims!(p[2], -0.25, 1.25)
+xlabel!(p[2], "Year", fontfamily="Arial", fontsize=12)
+ylabel!(p[2], "log percent", fontfamily="Arial", fontsize=12)
+title!(p[2], "Replicated Figure 7B", fontfamily="Arial", fontsize=12, fontweight="bold")
+
+#add two vertical lines at year 1994 and 2004
+vline!(p[2], [1994, 2004], color = :black, linewidth = 2, label = :none)
+
+Plots.savefig(p, "ReplicationFiles/4-figures/Figure7.pdf")
+end
+
+############# Table 5 ###################
+function table5()
+intervals = [(1982, 2016), (1982,1994), (1994,2004), (2004,2016), (2004,2010),(2010,2016)]
+
+uc, ac, ua, aa = [], [], [], []
+for i in intervals
+    push!(uc, prod[prod.Year .== i[1], :uprod_cum][1] - prod[prod.Year .== i[2], :uprod_cum][1])
+    push!(ac, prod[prod.Year .== i[1], :aprod_cum][1] - prod[prod.Year .== i[2], :aprod_cum][1])
+    push!(ua, (prod[prod.Year .== i[1], :uprod_cum][1] - prod[prod.Year .== i[2], :uprod_cum][1]) / (i[1]-i[2]))
+    push!(aa, (prod[prod.Year .== i[1], :aprod_cum][1] - prod[prod.Year .== i[2], :aprod_cum][1]) / (i[1]-i[2]))
+end
+
+indext = [string(i[1]) * "--" * string(i[2]) for i in intervals]
+
+t5 = DataFrame()
+t5.Cumulative_growth_rate_unadjusted = uc
+t5.Cumulative_growth_rate_adjusted = ac
+t5.Average_annual_growth_rate_unadjusted = ua
+t5.Average_annual_growth_rate_adjusted = aa
+
+print(t5)
+
+# Open the file in write mode
+file = open("Table5.md", "w")
+
+# Write the table header to the file
+write(file, "| Intervals | Cumulative Growth Rate (Unadjusted) | Cumulative Growth Rate (Adjusted) | Average Annual Growth Rate (Unadjusted) | Average Annual Growth Rate (Adjusted) |\n")
+write(file, "| --- | --- | --- | --- | --- |\n")
+
+# Write the rounded table rows to the file
+for i in 1:size(t5, 1)
+    cumulative_growth_rate_unadjusted = round(t5.Cumulative_growth_rate_unadjusted[i], digits=1)
+    cumulative_growth_rate_adjusted = round(t5.Cumulative_growth_rate_adjusted[i], digits=1)
+    average_annual_growth_rate_unadjusted = round(t5.Average_annual_growth_rate_unadjusted[i], digits=1)
+    average_annual_growth_rate_adjusted = round(t5.Average_annual_growth_rate_adjusted[i], digits=1)
+
+    write(file, "| $(indext[i]) | $cumulative_growth_rate_unadjusted | $cumulative_growth_rate_adjusted | $average_annual_growth_rate_unadjusted | $average_annual_growth_rate_adjusted |\n")
+end
+
+# Close the file
+close(file)
+end
 
 
+############# FIGURE 10 ###################
+function plots10()
+gr()
+# Creating a new plot with the specified layout
+p = Plots.plot(size=(400, 400), margins = 10Plots.mm)
+
+Plots.plot!(p, public.year, public.compn ./ (public.corpincn .+ public.cfcn), color = :black, label = "Unadjusted", linewidth=2)
+
+Plots.plot!(p, public.year, public.compn ./ (public.corpincn .+ public.cfcn .- adj_agg.adjearn3s_cca), color = :blue, label = "Adjusted", linewidth=2)
+
+xlims!(p, 1981, 2017)
+ylims!(p, 0.54, 0.66)
+
+xlabel!(p, "Year", fontfamily="Arial", fontsize=12)
+ylabel!(p, "Share of income", fontfamily="Arial", fontsize=12)
+title!(p, "Replicated Figure 10", fontfamily="Arial", fontsize=12, fontweight="bold")
+
+Plots.savefig(p, "ReplicationFiles/4-figures/Figure10.pdf")
+end
 
 
+############# FIGURE 11 ###################
+function plots11()
+fdius12 = CSV.read("ReplicationFiles/0-confidential-data-replication-files/FDIUS/FigureForPaper2012.csv", DataFrame)
+
+fdius12 = sort!(fdius12, :WtdShrEmpCompPPE)
+
+gr()
+# Creating a new plot with the specified layout
+layout = @layout [a b]
+p = Plots.plot(layout=layout, size=(800, 400), margins = 10Plots.mm)
+
+Plots.plot!(p[1], fdius12.WtdShrEmpCompPPE, fdius12.LowessFitted, color = :blue, label = :none, linewidth=2)
+
+Plots.plot!(p[1], fdius12.WtdShrEmpCompPPE, fdius12.RegFitted, color = :red, label = :none, linewidth=2, linestyle=:dash)
+
+#add 45 degree line
+Plots.plot!(p[1], [0, 1], [0, 1], color = :black, label = :none, linewidth=2, linestyle=:dash)
+
+xlims!(p[1], 0, 0.75)
+ylims!(p[1], 0, 0.75)
+
+xlabel!(p[1], "U.S. apportionment weight", fontfamily="Arial", fontsize=12)
+ylabel!(p[1], "U.S. share of worldwide profit", fontfamily="Arial", fontsize=12)
+
+annotate!(p[1], 0.4, 0.6, "45- degree line", fontfamily="Arial", annotationfontsize=8)
+annotate!(p[1], 0.47, 0.4, "OLS\nfitted value", fontfamily="Arial", annotationfontsize=8)
+annotate!(p[1], 0.55, 0.2, "Lowess\nsmoothed value", fontfamily="Arial", annotationfontsize=8)
+
+
+fdius15 = CSV.read("ReplicationFiles/0-confidential-data-replication-files/FDIUS/FigureForPaper2015.csv", DataFrame)
+fdius15 = sort!(fdius15, :WtdShrEmpCompPPE)
+
+Plots.plot!(p[2], fdius15.WtdShrEmpCompPPE, fdius15.LowessFitted, color = :blue, label = :none, linewidth=2)
+
+Plots.plot!(p[2], fdius15.WtdShrEmpCompPPE, fdius15.RegFitted, color = :red, label = :none, linewidth=2, linestyle=:dash)
+
+#add 45 degree line
+Plots.plot!(p[2], [0, 1], [0, 1], color = :black, label = :none, linewidth=2, linestyle=:dash)
+
+xlims!(p[2], 0, 0.75)
+ylims!(p[2], 0, 0.75)
+
+xlabel!(p[2], "U.S. apportionment weight", fontfamily="Arial", fontsize=12)
+ylabel!(p[2], "U.S. share of worldwide profit", fontfamily="Arial", fontsize=12)
+
+annotate!(p[2], 0.4, 0.6, "45- degree line", fontfamily="Arial", annotationfontsize=8)
+annotate!(p[2], 0.47, 0.4, "OLS\nfitted value", fontfamily="Arial", annotationfontsize=8)
+annotate!(p[2], 0.55, 0.2, "Lowess\nsmoothed value", fontfamily="Arial", annotationfontsize=8)
+
+Plots.savefig(p, "ReplicationFiles/4-figures/Figure11.pdf")
+end
+
+
+############# FIGURE 4 ###################

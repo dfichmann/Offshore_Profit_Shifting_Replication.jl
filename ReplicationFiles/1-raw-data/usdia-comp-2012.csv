@@ -1,95 +1,77 @@
-"Data on activities of multinational enterprises"
-"U.S. Direct Investment Abroad,All Majority-owned Foreign Affiliates (data for 2009 and forward),Compensation of Employees" 
-"Bureau of Economic Analysis" 
-"By Country Only (Major Countries)  (Millions of Dollars) <br/>"
-"","Compensation of Employees"
-"","2012"
-"All Countries Total",555862                 
-"Canada",63497                  
-"Europe",284567                 
-"  Austria",3671                   
-"  Belgium",11907                  
-"  Czech Republic",2204                   
-"  Denmark",3337                   
-"  Finland",1517                   
-"  France",34192                  
-"  Germany",49963                  
-"  Greece",987                     
-"  Hungary",1664                   
-"  Ireland",8158                   
-"  Italy",15018                  
-"  Luxembourg",1225                   
-"  Netherlands",16913                  
-"  Norway",5020                   
-"  Poland",4014                   
-"  Portugal",1311                   
-"  Russia",4296                   
-"  Spain",10591                  
-"  Sweden",5578                   
-"  Switzerland",11414                  
-"  Turkey",2051                   
-"  United Kingdom",85998                  
-"  Other",3538                   
-"Latin America and Other Western Hemisphere",59647                  
-"  South America",38063                  
-"    Argentina",5040                   
-"    Brazil",22633                  
-"    Chile",3520                   
-"    Colombia",2372                   
-"    Ecuador",345                     
-"    Peru",1208                   
-"    Venezuela",2471                   
-"    Other",475                     
-"  Central America",19720                  
-"    Costa Rica",919                     
-"    Honduras",388                     
-"    Mexico",17356                  
-"    Panama",435                     
-"    Other",622                     
-"  Other Western Hemisphere",1863                   
-"    Barbados",36                      
-"    Bermuda",697                     
-"    Dominican Republic",221                     
-"    United Kingdom Islands, Caribbean",294                     
-"    Other",615                     
-"Africa",7501                   
-"  Egypt",741                     
-"  Nigeria",931                     
-"  South Africa",3388                   
-"  Other",2441                   
-"Middle East",7556                   
-"  Israel",4267                   
-"  Saudi Arabia",1047                   
-"  United Arab Emirates",1471                   
-"  Other",771                     
-"Asia and Pacific",133095                 
-"  Australia",26863                  
-"  China",17895                  
-"  Hong Kong",8073                   
-"  India",13367                  
-"  Indonesia",2316                   
-"  Japan",32303                  
-"  Malaysia",2965                   
-"  New Zealand",1479                   
-"  Philippines",2290                   
-"  Singapore",10763                  
-"  South Korea",6890                   
-"  Taiwan",2813                   
-"  Thailand",2771                   
-"  Other",2307                   
-"Addenda:",""
-"  European Union",260666                 
-"  OPEC",7575                   
-"Legend / Footnotes:"
-"<strong>n.s.</strong>  Not shown.  Data may not be shown for several reasons:"
-"• The data appear on another line in this table."
-"• The data are not shown in this table but may be available in detailed country- or industry-level tables in this interactive system or in other BEA published tables on direct investment."
-"• The data are not available, do not apply, or are not defined."
-"<strong>(*)</strong> A nonzero value that rounds to zero."
-"<strong>(D)</strong> indicates that the data in the cell have been suppressed to avoid disclosure of data of individual companies."
-"Data for the European Union (EU) reflect the EU membership during the reference period. In 1994, the EU was comprised of Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, and the United Kingdom. Beginning with 1995, Austria, Finland, and Sweden were included. Beginning with second quarter 2004, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania, Malta, Poland, Slovakia, and Slovenia were included. Bulgaria and Romania were included beginning with first quarter 2007 and Croatia was included beginning with third quarter 2013. The United Kingdom was excluded beginning with first quarter 2020."
-"OPEC (Organization of Petroleum Exporting Countries): data for this group reflects the OPEC membership during the reference period. This aggregate was discontinued after the 2018 reference year."
-"Data for each foreign affiliate are classified by country based on its country of location-that is, the country in which the affiliate's physical assets are located or in which its primary activity is carried out.  For years prior to 1999, the ""<em>International</em>"" category consists of affiliates that have operations spanning more than one country and that are engaged in petroleum shipping, other water transportation, or offshore oil and gas drilling.  Beginning with the data for 1999, data for such affiliates are classified in the country of residence of the operator of the ship or equipment."
-"The composition of the ""Other"" categories shown in this table may change from one year to another.  For a geographic area, ""Other"" is a residual that shows a total for all countries not shown separately under that area.  Because the countries shown separately may change over time as the composition of direct investment changes, data for a particular country may be included in an ""Other"" total in one year but excluded from it in another year.  Changes in the countries shown separately generally take place in years covered by benchmark surveys (or censuses) of direct investment, which usually are conducted once every five years."
-"Source: U.S. Bureau of Economic Analysis"
-"If you have a question about the availability of data, E-mail your question to <a href=""mailto:internationalaccounts@bea.gov"">internationalaccounts@bea.gov</a>"
+country,Compensation of Employees
+All Countries Total,555862
+Canada,63497
+Europe,284567
+  Austria,3671
+  Belgium,11907
+  Czech Republic,2204
+  Denmark,3337
+  Finland,1517
+  France,34192
+  Germany,49963
+  Greece,987
+  Hungary,1664
+  Ireland,8158
+  Italy,15018
+  Luxembourg,1225
+  Netherlands,16913
+  Norway,5020
+  Poland,4014
+  Portugal,1311
+  Russia,4296
+  Spain,10591
+  Sweden,5578
+  Switzerland,11414
+  Turkey,2051
+  United Kingdom,85998
+  Other,3538
+Latin America and Other Western Hemisphere,59647
+  South America,38063
+    Argentina,5040
+    Brazil,22633
+    Chile,3520
+    Colombia,2372
+    Ecuador,345
+    Peru,1208
+    Venezuela,2471
+    Other,475
+  Central America,19720
+    Costa Rica,919
+    Honduras,388
+    Mexico,17356
+    Panama,435
+    Other,622
+  Other Western Hemisphere,1863
+    Barbados,36
+    Bermuda,697
+    Dominican Republic,221
+"    United Kingdom Islands, Caribbean",294
+    Other,615
+Africa,7501
+  Egypt,741
+  Nigeria,931
+  South Africa,3388
+  Other,2441
+Middle East,7556
+  Israel,4267
+  Saudi Arabia,1047
+  United Arab Emirates,1471
+  Other,771
+Asia and Pacific,133095
+  Australia,26863
+  China,17895
+  Hong Kong,8073
+  India,13367
+  Indonesia,2316
+  Japan,32303
+  Malaysia,2965
+  New Zealand,1479
+  Philippines,2290
+  Singapore,10763
+  South Korea,6890
+  Taiwan,2813
+  Thailand,2771
+  Other,2307
+Addenda:,
+  European Union,260666
+  OPEC,7575

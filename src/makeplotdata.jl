@@ -99,5 +99,9 @@ function makeplotdata()
     
     # Interpolate missing values in adj_agg DataFrame
     adj_tax = Impute.interp(adj_tax)
+
+    #return all the dataframes needed for the plots:
+    return public, adj_agg, adj_ind, adj_tax
+
+end
     
-    end
