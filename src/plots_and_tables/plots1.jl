@@ -51,5 +51,7 @@ function plots1()
     
     # Saving the panel figure with higher resolution
     Plots.savefig(p, "ReplicationFiles/figures/Figure1.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure1.png")
+
     end
-    plots1()
+   

@@ -24,4 +24,6 @@ function plots10()
     title!(p, "Replicated Figure 10", fontfamily="Arial", fontsize=12, fontweight="bold")
     
     Plots.savefig(p, "ReplicationFiles/figures/Figure10.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure10.png")
+
 end

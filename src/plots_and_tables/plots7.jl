@@ -37,6 +37,8 @@ function plots7()
     vline!(p[2], [1994, 2004], color = :black, linewidth = 2, label = :none)
     
     Plots.savefig(p, "ReplicationFiles/figures/Figure7.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure7.png")
+
     end
     
     

@@ -61,16 +61,6 @@ function rename_and_process!(df, file)
     return df
 end
 
-function process_files(filenames)
-    file_dfs = Dict()
-    for (file, sheet) in filenames
-        df = DataFrame(XLSX.readtable(file, sheet))
-        df = rename_and_process!(df, file)
-        file_dfs[split(file, "/")[end]] = df  # Use the last part of the file path as the key
-    end
-    return file_dfs
-end
-
 """
     process_files(filenames)
 
@@ -83,7 +73,13 @@ Processes a collection of Excel files and sheets into DataFrames, storing each i
 - A dictionary with filenames as keys and processed DataFrames as values.
 """
 function process_files(filenames)
-    # ...
+    file_dfs = Dict()
+    for (file, sheet) in filenames
+        df = DataFrame(XLSX.readtable(file, sheet))
+        df = rename_and_process!(df, file)
+        file_dfs[split(file, "/")[end]] = df  # Use the last part of the file path as the key
+    end
+    return file_dfs
 end
 
 """

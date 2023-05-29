@@ -3,8 +3,6 @@ module Offshore_Profit_Shifting_Replication
 # Write your package code here.
 using Markdown, DataFrames, Plots, Statistics, CSV, DataFrames, XLSX, Missings, Interpolations, Impute, DataFramesMeta
 
-
-
 include("wrangle_data/makeplotdata.jl")
 
 public, adj_agg, adj_ind, adj_tax = makeplotdata()

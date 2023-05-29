@@ -46,6 +46,7 @@ function plots4()
     Plots.scatter!(p[2], public.year[2:2:end], public.adj_goodbal[2:2:end], color = :darkred, marker = :Circle, label = :none)
     
     Plots.savefig(p, "ReplicationFiles/figures/Figure4.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure4.png")
     
     end 
     

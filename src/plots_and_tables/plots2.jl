@@ -74,4 +74,6 @@ title!(p[2], "Replicated Figure 2A", fontfamily="Arial", fontsize=12, fontweight
 
 # Saving the figure with higher resolution
 Plots.savefig(p, "ReplicationFiles/figures/Figure2.pdf")
+Plots.savefig(p, "ReplicationFiles/figures/Figure2.png")
+
 end 

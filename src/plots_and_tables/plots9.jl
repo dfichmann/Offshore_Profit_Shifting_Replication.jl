@@ -22,5 +22,5 @@ function plots9()
     title!(p, "Replicated Figure 9", fontfamily="Arial", fontsize=14, fontweight="bold")
 
     Plots.savefig(p, "ReplicationFiles/figures/Figure9.pdf")
-
+    Plots.savefig(p, "ReplicationFiles/figures/Figure9.png")
 end

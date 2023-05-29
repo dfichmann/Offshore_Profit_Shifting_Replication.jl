@@ -49,5 +49,7 @@ function plots6()
     title!(p[2], "Replicated Figure 6B", fontfamily="Arial", fontsize=12, fontweight="bold")
     
     Plots.savefig(p, "ReplicationFiles/figures/Figure6.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure6.png")
+
     
 end
