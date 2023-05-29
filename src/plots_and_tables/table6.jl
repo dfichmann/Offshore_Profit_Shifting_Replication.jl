@@ -1,6 +1,10 @@
 """
 This function replicates table 6. The Table is saved in the folder "ReplicationFiles/tables" as a markdown file.
-"""
+    ```julia
+    table6()
+    
+    No arguments are needed for this function
+    """
 function table6()
 
 intervals = [(1982, 1994), (1994, 2016), (1994,2004), (2004,2016), (2004,2008), (2008,2016)]

@@ -19,7 +19,6 @@ plots2()
 
 No arguments needed for this function
 """
-
 function plots2()
 # Set the GR backend
 gr()

@@ -20,7 +20,6 @@ plots1()
 
 No arguments are needed for this function.
 """
-
 function plots1()
     # Set the GR backend
     gr()

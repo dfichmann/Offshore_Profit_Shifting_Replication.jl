@@ -1,3 +1,14 @@
+"""
+    makedataforplot7()
+
+This function prepares data needed for Plot 7. It performs calculations on several variables such as `gdibusn`, `gdibusr`, `uprod_log`, `uprod_gr`, `uprod_cum`, `gvabusr_adj`, `gdibusr_adj`, `aprod_log`, `aprod_gr`, and `aprod_cum` from the `public` and `adj_agg` datasets. 
+
+The function returns a `prod` DataFrame, which contains the results of these calculations, necessary for plotting the seventh graph. 
+
+# Returns
+- `prod::DataFrame`: A DataFrame that contains computed variables for Plot 7.
+
+"""
 function makedataforplot7()
     public.gdibusn = public.gdin - (public.gdpn .- public.gvabusn)
     public.gdibusr = public.gdibusn ./ public.gva_deflator

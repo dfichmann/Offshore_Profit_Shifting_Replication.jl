@@ -1,9 +1,36 @@
-using XLSX, Impute, DataFramesMeta, DataFrames, CSV
+"""
+    logg(x::Vector)
 
+Calculates the logarithmic growth rate for a vector `x`. It does this by computing the log of the ratio of subsequent elements in the vector. The first element of the resulting vector is `NaN` as there's no previous element for the first value in `x`.
+
+# Arguments
+- `x::Vector`: A numeric vector for which the logarithmic growth rate needs to be computed.
+
+# Returns
+- `Vector`: A vector of the same length as `x`, with the first element being `NaN` and the rest being the log growth rate of `x`.
+
+# Example
+```julia
+julia> logg([1, 2, 3, 4])
+3-element Array{Float64,1}:
+
+"""
 function logg(x::Vector)
     log.(x[2:end] ./ x[1:end-1])
 end
 
+"""
+    rename_and_process!(df, file)
+
+Renames columns, interpolates missing values, and reshapes the provided DataFrame `df` according to certain rules based on the provided `file` string. The DataFrame is also sorted and certain columns are selected based on their relevance to the filename.
+
+# Arguments
+- `df`: A DataFrame to be processed.
+- `file`: A string that determines certain renaming and selection rules.
+
+# Returns
+- A processed DataFrame.
+"""
 function rename_and_process!(df, file)
     rename!(df, ["year", "indgroup", "adjcomps", "adjsales", "adjrdstks", "adjppes", "adjwt3s"])
     unique_indgroup = unique(df[!, :indgroup])
@@ -44,6 +71,31 @@ function process_files(filenames)
     return file_dfs
 end
 
+"""
+    process_files(filenames)
+
+Processes a collection of Excel files and sheets into DataFrames, storing each in a dictionary with the filename as the key.
+
+# Arguments
+- `filenames`: A collection of tuples where each tuple contains a filename and a sheet name.
+
+# Returns
+- A dictionary with filenames as keys and processed DataFrames as values.
+"""
+function process_files(filenames)
+    # ...
+end
+
+"""
+    makedataforplot8()
+
+Processes and merges several data files for use in plotting. The function reads, renames, and processes data from
+specified Excel and CSV files, and calculates additional columns for each industry group.
+
+# Returns
+- `inds`: A DataFrame containing processed data for each industry group (rd, nrd, itu, nitu, itp, nitp) and year,
+          with additional computed growth rates and cumulative growth rates.
+"""
 function makedataforplot8()
     # Call the function with the list of files and their corresponding sheet names
     files_and_sheets = [("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetITP.xlsx", "ADJITPSCALE"),

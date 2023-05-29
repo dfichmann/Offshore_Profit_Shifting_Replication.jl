@@ -1,4 +1,33 @@
+"""
+    makeplotdata()
 
+This function prepares and processes the data that will be used to create specific plots. It reads data from multiple sources, performs interpolations to handle missing values, and applies specific transformations. 
+
+The function performs the following operations:
+
+1. Reads data from "aggregate.csv" and "OutputAdjNet.xlsx" files.
+2. Applies a filter on the years between 1982 and 2017.
+3. Interpolates missing values within the data.
+4. Adds new columns to the DataFrame `adj_agg`, each being a product of an existing column and the `income_adj_factor` column from the `public` DataFrame.
+5. Reads data from "OutputAdjNetIndustry.xlsx" and "OutputAdjNetHaven.xlsx", creates datasets with all combinations of unique years and respective unique identifier (`IEDindPar` and `Haven`), then joins them with the original data.
+6. Filters out specific industry codes from the `adj_ind` and `adj_tax` DataFrames.
+7. Interpolates missing values within the `adj_ind` and `adj_tax` DataFrames.
+
+At the end, it returns four DataFrames: `public`, `adj_agg`, `adj_ind`, and `adj_tax`.
+
+# Usage
+```julia
+public, adj_agg, adj_ind, adj_tax = makeplotdata()
+
+# Returns
+
+- public: DataFrame read from the "aggregate.csv" file.
+- adj_agg: DataFrame read and processed from the "OutputAdjNet.xlsx" file.
+- adj_ind: DataFrame read and processed from the "OutputAdjNetIndustry.xlsx" file.
+- adj_tax: DataFrame read and processed from the "OutputAdjNetHaven.xlsx" file.
+
+No arguments are needed for this function.
+"""
 function makeplotdata()
 
     public = CSV.read("ReplicationFiles/data/aggregate.csv", DataFrame)

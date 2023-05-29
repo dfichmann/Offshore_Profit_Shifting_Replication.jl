@@ -1,3 +1,25 @@
+"""
+    makedataforplot2()
+
+This function reads and processes data for creating plot 2. It reads data from the "OutputAggStdError.xlsx" file, performs necessary data manipulations and calculations. 
+
+Specifically, the function does the following:
+1. Reads the "OutputAggStdError.xlsx" file.
+2. Creates a DataFrame with all combinations of unique Panels and Years.
+3. Interpolates missing values within the DataFrame.
+4. Joins the DataFrame with the `public` DataFrame.
+5. Computes statistics across panels for each Year.
+
+# Usage
+```julia
+panel_stats = makedataforplot2()
+
+Returns
+
+panel_stats: A DataFrame containing computed statistics for each Panel.
+This function takes no arguments.
+    
+"""
 function makedataforplot2()
     boot = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAggStdError.xlsx", "STACKAGGADJ"))
     println(boot[1, :])
