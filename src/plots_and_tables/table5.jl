@@ -1,3 +1,6 @@
+"""
+This function replicates table 5. The Table is saved in the folder "ReplicationFiles/tables" as a markdown file.
+"""
 function table5()
     intervals = [(1982, 2016), (1982,1994), (1994,2004), (2004,2016), (2004,2010),(2010,2016)]
     

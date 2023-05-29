@@ -1,3 +1,6 @@
+"""
+This function replicates a figure 8, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+"""
 function plots8()
     gr()
     # Creating a layout with 1 row and 2 columns

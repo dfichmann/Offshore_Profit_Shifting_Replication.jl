@@ -20,10 +20,9 @@ jobs:
         version:
           - '1.8'
         os:
-          - ubuntu-latest
+          - macos-latest
         arch:
           - x64
-          - x86
     steps:
       - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1

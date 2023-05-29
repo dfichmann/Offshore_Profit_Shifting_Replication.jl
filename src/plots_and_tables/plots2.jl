@@ -1,6 +1,6 @@
-############# FIGURE 2 ###################
-using Impute 
-
+"""
+This function replicates a figure 2, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+"""
 function plots2()
 # Set the GR backend
 gr()

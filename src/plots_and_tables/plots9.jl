@@ -1,4 +1,6 @@
-
+"""
+This function replicates a figure 9, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+"""
 function plots9()
     gr()
     p = Plots.plot(size=(500, 400), margins = 10Plots.mm)

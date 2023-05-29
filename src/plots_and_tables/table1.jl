@@ -1,5 +1,6 @@
-using CSV, DataFrames
-
+"""
+This function replicates table 1. The Table is saved in the folder "ReplicationFiles/tables" as a markdown file.
+"""
 function table1()
 # The list of countries to filter the final table
 ctys = ["All Countries Total", "Canada", "Ireland", "Luxembourg", "Netherlands", "Switzerland",

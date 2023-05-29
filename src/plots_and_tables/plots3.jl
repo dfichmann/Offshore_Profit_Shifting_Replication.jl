@@ -1,3 +1,6 @@
+"""
+This function replicates a figure 3, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+"""
 function plots3()
     # Set the GR backend
     gr()

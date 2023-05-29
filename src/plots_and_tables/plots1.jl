@@ -1,6 +1,6 @@
 ############# FIGURE 1 ###################
 """
-this makew fig 1
+This function replicates a figure 1, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
 """
 function plots1()
     # Set the GR backend

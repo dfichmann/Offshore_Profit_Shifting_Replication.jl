@@ -1,3 +1,6 @@
+"""
+This function replicates a figure 11, which consists of two subplots. The figure is saved in the folder "ReplicationFiles/figures" as a pdf file.
+"""
 function plots11()
     fdius12 = CSV.read("ReplicationFiles/0-confidential-data-replication-files/FDIUS/FigureForPaper2012.csv", DataFrame)
     
