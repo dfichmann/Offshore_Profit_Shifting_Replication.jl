@@ -1,14 +1,8 @@
 module Offshore_Profit_Shifting_Replication
 
 # Write your package code here.
-using Impute
-using Markdown
-using PDFIO
-using GeoJSON
-using Plots
-using Statistics
-using CSV
-using DataFrames
+using Markdown, DataFrames, Plots, Statistics, CSV, DataFrames, XLSX, Missings, Interpolations, Impute
+
 
 
 include("wrangle_data/makeplotdata.jl")
@@ -34,7 +28,9 @@ include("plots_and_tables/plots8.jl")
 include("plots_and_tables/plots9.jl")
 include("plots_and_tables/plots10.jl")
 include("plots_and_tables/plots11.jl")
+
 include("plots_and_tables/table1.jl")
+include("plots_and_tables/table2.jl")
 include("plots_and_tables/table5.jl")
 include("plots_and_tables/table6.jl")
 

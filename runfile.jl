@@ -11,5 +11,6 @@ Offshore_Profit_Shifting_Replication.plots9()
 Offshore_Profit_Shifting_Replication.plots10()
 
 Offshore_Profit_Shifting_Replication.table1()
+Offshore_Profit_Shifting_Replication.table2()
 Offshore_Profit_Shifting_Replication.table5()
 Offshore_Profit_Shifting_Replication.table6()
