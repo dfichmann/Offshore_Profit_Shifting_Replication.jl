@@ -1,6 +1,6 @@
 ############# FIGURE 1 ###################
 """
-thi makew fig 1
+this makew fig 1
 """
 function plots1()
     # Set the GR backend
