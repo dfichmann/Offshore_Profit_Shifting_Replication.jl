@@ -56,6 +56,6 @@ function plots11()
     annotate!(p[2], 0.55, 0.2, "Lowess\nsmoothed value", fontfamily="Arial", annotationfontsize=8)
     
     Plots.savefig(p, "ReplicationFiles/figures/Figure11.pdf")
-    Plots.savefig(p, "ReplicationFiles/figures/Figure11.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure11.png")
 
 end
