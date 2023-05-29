@@ -13,6 +13,6 @@ function plots9()
     annotate!(p, 2000, 48, "non-R&D Intensive", fontfamily="Arial", annotationfontsize=8)
     title!(p, "Replicated Figure 9", fontfamily="Arial", fontsize=14, fontweight="bold")
 
-    Plots.savefig(p, "ReplicationFiles/4-figures/Figure9.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure9.pdf")
 
 end

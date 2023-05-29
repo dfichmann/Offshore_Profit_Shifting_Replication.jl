@@ -20,7 +20,7 @@ function table5()
     print(t5)
     
     # Open the file in write mode
-    file = open("ReplicationFiles/4-tables/Table5.md", "w")
+    file = open("ReplicationFiles/tables/Table5.md", "w")
     
     # Write the table header to the file
     write(file, "| Intervals | Cumulative Growth Rate (Unadjusted) | Cumulative Growth Rate (Adjusted) | Average Annual Growth Rate (Unadjusted) | Average Annual Growth Rate (Adjusted) |\n")

@@ -1,19 +1,8 @@
-import Pkg; Pkg.add("Plots")
-import Pkg; Pkg.add("Seaborn")
-import Pkg; Pkg.add("Statistics")
-import Pkg; Pkg.add("CSV")
-import Pkg; Pkg.add("DataFrames")
-import Pkg; Pkg.add("XLSX")
-import Pkg; Pkg.add("Impute")
-import Pkg; Pkg.add("Missings")
-import Pkg; Pkg.add("Interpolations")
-
-using DataFrames, Plots, Seaborn, Statistics, CSV, DataFrames, XLSX, Missings, Interpolations
-using Impute
+using DataFrames, Plots, Seaborn, Statistics, CSV, DataFrames, XLSX, Missings, Interpolations, Impute
 
 function makeplotdata()
 
-    public = CSV.read("ReplicationFiles/3-intermediate-files/aggregate.csv", DataFrame)
+    public = CSV.read("ReplicationFiles/data/aggregate.csv", DataFrame)
     println(public, 1)
     
     # Read Excel file

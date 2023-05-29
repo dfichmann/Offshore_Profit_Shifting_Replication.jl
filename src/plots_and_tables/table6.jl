@@ -34,7 +34,7 @@ t6_transposed_df[!, :RowNames] = ["R&D intensive adjusted", "R&D intensive unadj
 t6_final = t6_transposed_df[:, ["RowNames", "82-94", "94-16", "94-04", "04-16", "04-08", "08-16"]]
 
 # Open the file in write mode
-file = open("ReplicationFiles/4-tables/Table6.md", "w")
+file = open("ReplicationFiles/tables/Table6.md", "w")
 
 # Write the table header to the file
 write(file, "| RowNames | 82-94 | 94-16 | 94-04 | 04-16 | 04-08 | 08-16 |\n")

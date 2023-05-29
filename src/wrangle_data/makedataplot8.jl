@@ -52,7 +52,7 @@ function makedataforplot8()
 
     dfs = process_files(files_and_sheets)
 
-    inds = CSV.read("ReplicationFiles/3-intermediate-files/industry.csv", DataFrame, header=[1,2])
+    inds = CSV.read("ReplicationFiles/data/industry.csv", DataFrame, header=[1,2])
 
     rename!(inds, :Column1_Column1 => :year)
 

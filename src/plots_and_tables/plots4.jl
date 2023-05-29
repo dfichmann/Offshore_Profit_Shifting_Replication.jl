@@ -37,7 +37,7 @@ function plots4()
     public.adj_goodbal = (public.goodbal) ./ (public.gdpn -adj_agg.adjearn3s_cca)
     Plots.scatter!(p[2], public.year[2:2:end], public.adj_goodbal[2:2:end], color = :darkred, marker = :Circle, label = :none)
     
-    Plots.savefig(p, "ReplicationFiles/4-figures/Figure4.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure4.pdf")
     
     end 
     

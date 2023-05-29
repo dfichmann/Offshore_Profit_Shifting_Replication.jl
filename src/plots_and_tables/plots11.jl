@@ -46,5 +46,5 @@ function plots11()
     annotate!(p[2], 0.47, 0.4, "OLS\nfitted value", fontfamily="Arial", annotationfontsize=8)
     annotate!(p[2], 0.55, 0.2, "Lowess\nsmoothed value", fontfamily="Arial", annotationfontsize=8)
     
-    Plots.savefig(p, "ReplicationFiles/4-figures/Figure11.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure11.pdf")
 end

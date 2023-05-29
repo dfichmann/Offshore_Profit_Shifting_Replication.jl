@@ -37,5 +37,5 @@ function plots3()
     ylabel!(p[2], "share of business-sector value added (percent)", fontfamily="Arial", fontsize=10)
     title!(p[2], "Replicated Figure 3B", fontfamily="Arial", fontsize=14, fontweight="bold")
     
-    Plots.savefig(p, "ReplicationFiles/4-figures/Figure3.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure3.pdf")
     end

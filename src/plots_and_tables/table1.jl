@@ -6,10 +6,10 @@ ctys = ["All Countries Total", "Canada", "Ireland", "Luxembourg", "Netherlands",
         "Barbados", "Bermuda", "United Kingdom Islands, Caribbean", "Hong Kong", "Singapore"]
 
 # Read the data
-emp = CSV.read("ReplicationFiles/1-raw-data/usdia-employees-2012.csv", DataFrame)
-ast = CSV.read("ReplicationFiles/1-raw-data/usdia-total-assets-2012.csv", DataFrame)
-comp = CSV.read("ReplicationFiles/1-raw-data/usdia-comp-2012.csv", DataFrame)
-ppe = CSV.read("ReplicationFiles/1-raw-data/usdia-ppe-2012.csv", DataFrame)
+emp = CSV.read("ReplicationFiles/data/usdia-employees-2012.csv", DataFrame)
+ast = CSV.read("ReplicationFiles/data/usdia-total-assets-2012.csv", DataFrame)
+comp = CSV.read("ReplicationFiles/data/usdia-comp-2012.csv", DataFrame)
+ppe = CSV.read("ReplicationFiles/data/usdia-ppe-2012.csv", DataFrame)
 
 # Merge the dataframes
 t1 = innerjoin(emp, ast, on = :country, makeunique = true)
@@ -48,7 +48,7 @@ t1.Country = replace(t1.Country, "United Kingdom Islands, Caribbean" => "U.K.I.,
 t1
 
 # Open the file in write mode
-file = open("ReplicationFiles/4-tables/Table1.md", "w")
+file = open("ReplicationFiles/tables/Table1.md", "w")
 
 # Write the table header to the file
 write(file, "| Country | PPE | Compensation | Employment (mil. USD) |\n")

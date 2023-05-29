@@ -55,5 +55,5 @@ ylabel!(p[2], "Billions of dollars (2009 base year)", fontfamily="Arial", fontsi
 title!(p[2], "Replicated Figure 2A", fontfamily="Arial", fontsize=12, fontweight="bold")
 
 # Saving the figure with higher resolution
-Plots.savefig(p, "ReplicationFiles/4-figures/Figure2.pdf")
+Plots.savefig(p, "ReplicationFiles/figures/Figure2.pdf")
 end 

@@ -40,6 +40,6 @@ function plots6()
     ylabel!(p[2], "annual return (percent)", fontfamily="Arial", fontsize=12)
     title!(p[2], "Replicated Figure 6B", fontfamily="Arial", fontsize=12, fontweight="bold")
     
-    Plots.savefig(p, "ReplicationFiles/4-figures/Figure6.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure6.pdf")
     
 end

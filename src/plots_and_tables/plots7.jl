@@ -28,7 +28,7 @@ function plots7()
     #add two vertical lines at year 1994 and 2004
     vline!(p[2], [1994, 2004], color = :black, linewidth = 2, label = :none)
     
-    Plots.savefig(p, "ReplicationFiles/4-figures/Figure7.pdf")
+    Plots.savefig(p, "ReplicationFiles/figures/Figure7.pdf")
     end
     
     
