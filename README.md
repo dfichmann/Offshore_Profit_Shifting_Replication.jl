@@ -63,9 +63,6 @@ I downloaded the original python replication package from the [AER website](http
     
 6. The output will then be saved in the [*figures*](ReplicationFiles/figures) and [*tables*](ReplicationFiles/tables) folders, within the ReplicationFiles folder.
 
-7. To verify this you can delete all the figures inside their respective folders and then run <span style="color:green">**julia>**</span>
- include(`"test/runtests.jl"`). This runs 14 tests that should all pass :white_check_mark:
-
 ## Replicated Figures and Tables
 The runfile.jl does the following:
 ```julia
@@ -210,3 +207,16 @@ Offshore_Profit_Shifting_Replication.table6()
 | non-R&D intensive unadjusted | 18.7 | 31.8 | 21.0 | 10.7 | 2.1 | 8.6 |
 
 [Link to file](ReplicationFiles/tables/Table6.md)
+
+ ### Missing Tables
+
+You may notice that there are 2 missing tables in the project. I replicated all the graphs and the important tables and this is as far as I got. I'm not sure why those last two weren't working - it may be because of an issue with the confidential data. Alas, given that there were so many figures and tables to reproduce, I eventually decided to prioritize understanding github actions, docstrings, and other cool aspects of this replication. I'll keep trying though. 
+
+## Documentation and Tests
+
+You can find the documentation explaining my functions and arguments here: [documentation link](https://dfichmann.github.io/Offshore_Profit_Shifting_Replication.jl/dev/). 
+
+Here you can check out how the dataframes are created in julia by looking at, for example, the documentation for the [makeplotdata()](https://dfichmann.github.io/Offshore_Profit_Shifting_Replication.jl/dev/#Offshore_Profit_Shifting_Replication.makeplotdata-NTuple{4,%20Any}) function. 
+
+Github Actions runs the tests and is green when they pass. To run them yourself. To verify this you can delete all the figures inside their respective folders and then run <span style="color:green">**julia>**</span>
+ include(`"test/runtests.jl"`). This runs 4 tests that should all pass :white_check_mark:
