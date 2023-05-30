@@ -1,22 +1,44 @@
 using Offshore_Profit_Shifting_Replication
 using Test
-using DataFrames
+using Markdown, DataFrames, Plots, Statistics, CSV, DataFrames, XLSX, Missings, Interpolations, Impute, DataFramesMeta
+
+    public = CSV.read("ReplicationFiles/data/aggregate.csv", DataFrame)
+    adj_agg = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNet.xlsx", "ADJNETSCALE"))
+    adj_ind = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetIndustry.xlsx", "ADJINDSCALE"))
+    adj_tax = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetHaven.xlsx", "ADJHVNSCALE"))
 
 @testset "Offshore_Profit_Shifting_Replication.jl" begin
-    public, adj_agg, adj_ind, adj_tax = Offshore_Profit_Shifting_Replication.makeplotdata()
 
-    # Test the types of the outputs
-    @test isa(public, DataFrame)
-    @test isa(adj_agg, DataFrame)
-    @test isa(adj_ind, DataFrame)
-    @test isa(adj_tax, DataFrame)
+# Run the makeplotdata function
+public_out, adj_agg_out, adj_ind_out, adj_tax_out = Offshore_Profit_Shifting_Replication.makeplotdata(public, adj_agg, adj_ind, adj_tax)
 
-    panel_stats = Offshore_Profit_Shifting_Replication.makedataforplot2()
-    @test isa(panel_stats, DataFrame)
+# Check the integrity of the output data
+@test isa(public_out, DataFrame)
+@test isa(adj_agg_out, DataFrame)
+@test isa(adj_ind_out, DataFrame)
+@test isa(adj_tax_out, DataFrame)
 
-    prod = Offshore_Profit_Shifting_Replication.makedataforplot7()
-    @test isa(prod, DataFrame)
+# Run the plots
+Offshore_Profit_Shifting_Replication.plots1()
+Offshore_Profit_Shifting_Replication.plots2()
+Offshore_Profit_Shifting_Replication.plots3()
+Offshore_Profit_Shifting_Replication.plots4()
+Offshore_Profit_Shifting_Replication.plots6()
+Offshore_Profit_Shifting_Replication.plots7()
+Offshore_Profit_Shifting_Replication.plots8()
+Offshore_Profit_Shifting_Replication.plots9()
+Offshore_Profit_Shifting_Replication.plots10()
+Offshore_Profit_Shifting_Replication.plots11()
 
-    inds = Offshore_Profit_Shifting_Replication.makedataforplot8()
-    @test isa(inds, DataFrame)
+# Check if the output files exist in the correct directory
+@test isfile("ReplicationFiles/figures/Figure1.pdf")
+@test isfile("ReplicationFiles/figures/Figure2.pdf")
+@test isfile("ReplicationFiles/figures/Figure3.pdf")
+@test isfile("ReplicationFiles/figures/Figure4.pdf")
+@test isfile("ReplicationFiles/figures/Figure6.pdf")
+@test isfile("ReplicationFiles/figures/Figure7.pdf")
+@test isfile("ReplicationFiles/figures/Figure8.pdf")
+@test isfile("ReplicationFiles/figures/Figure9.pdf")
+@test isfile("ReplicationFiles/figures/Figure10.pdf")
+@test isfile("ReplicationFiles/figures/Figure11.pdf")
 end

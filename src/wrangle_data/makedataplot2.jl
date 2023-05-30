@@ -20,9 +20,8 @@ panel_stats: A DataFrame containing computed statistics for each Panel.
 This function takes no arguments.
     
 """
-function makedataforplot2()
-    boot = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAggStdError.xlsx", "STACKAGGADJ"))
-    println(boot[1, :])
+function makedataforplot2(boot)
+    #boot = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAggStdError.xlsx", "STACKAGGADJ"))
     
     # Get unique values from the columns
     unique_Panel = unique(boot[!, :Panel])

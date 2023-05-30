@@ -9,7 +9,7 @@ The function returns a `prod` DataFrame, which contains the results of these cal
 - `prod::DataFrame`: A DataFrame that contains computed variables for Plot 7.
 
 """
-function makedataforplot7()
+function makedataforplot7(public)
     public.gdibusn = public.gdin - (public.gdpn .- public.gvabusn)
     public.gdibusr = public.gdibusn ./ public.gva_deflator
     

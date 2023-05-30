@@ -92,12 +92,8 @@ specified Excel and CSV files, and calculates additional columns for each indust
 - `inds`: A DataFrame containing processed data for each industry group (rd, nrd, itu, nitu, itp, nitp) and year,
           with additional computed growth rates and cumulative growth rates.
 """
-function makedataforplot8()
+function makedataforplot8(files_and_sheets)
     # Call the function with the list of files and their corresponding sheet names
-    files_and_sheets = [("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetITP.xlsx", "ADJITPSCALE"),
-                        ("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetITU.xlsx", "ADJITUSCALE"),
-                        ("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetRD.xlsx", "ADJRDSCALE")]
-
     dfs = process_files(files_and_sheets)
 
     inds = CSV.read("ReplicationFiles/data/industry.csv", DataFrame, header=[1,2])

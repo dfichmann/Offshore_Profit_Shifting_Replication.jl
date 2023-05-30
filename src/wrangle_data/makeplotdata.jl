@@ -17,7 +17,7 @@ At the end, it returns four DataFrames: `public`, `adj_agg`, `adj_ind`, and `adj
 
 # Usage
 ```julia
-public, adj_agg, adj_ind, adj_tax = makeplotdata()
+public, adj_agg, adj_ind, adj_tax = makeplotdata(public, adj_agg, adj_ind, adj_tax)
 
 # Returns
 
@@ -26,15 +26,14 @@ public, adj_agg, adj_ind, adj_tax = makeplotdata()
 - adj_ind: DataFrame read and processed from the "OutputAdjNetIndustry.xlsx" file.
 - adj_tax: DataFrame read and processed from the "OutputAdjNetHaven.xlsx" file.
 
-No arguments are needed for this function.
 """
-function makeplotdata()
+function makeplotdata(public, adj_agg, adj_ind, adj_tax)
 
-    public = CSV.read("ReplicationFiles/data/aggregate.csv", DataFrame)
+    #public = CSV.read("ReplicationFiles/data/aggregate.csv", DataFrame)
     println(public, 1)
     
     # Read Excel file
-    adj_agg = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNet.xlsx", "ADJNETSCALE"))
+    #adj_agg = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNet.xlsx", "ADJNETSCALE"))
     
     println(adj_agg[1, :])
     
@@ -63,7 +62,7 @@ function makeplotdata()
     adj_agg[!, :adjearnrdstks_cca] = adj_agg[!, :adjrdstks] .* public[!, :income_adj_factor]
     println(adj_agg[1, :])
     
-    adj_ind = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetIndustry.xlsx", "ADJINDSCALE"))
+    #adj_ind = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetIndustry.xlsx", "ADJINDSCALE"))
     
     # Get unique values from the columns
     unique_IEDindPar = unique(adj_ind[!, :IEDindPar])
@@ -91,7 +90,7 @@ function makeplotdata()
     adj_ind = Impute.interp(adj_ind)
     
     
-    adj_tax = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetHaven.xlsx", "ADJHVNSCALE"))
+    #adj_tax = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetHaven.xlsx", "ADJHVNSCALE"))
     #Get unique values from the columns
     unique_HVN = unique(adj_tax[!, :Haven])
     unique_Year = collect(1982:2016)
