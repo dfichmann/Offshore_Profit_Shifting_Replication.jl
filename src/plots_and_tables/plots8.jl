@@ -4,7 +4,7 @@ This function replicates a figure 8, which consists of two subplots. The figure 
     # Usage
 ```julia
 plots8()
-
+```
 No arguments are needed for this function
 """
 function plots8()

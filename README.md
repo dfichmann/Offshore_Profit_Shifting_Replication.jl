@@ -55,13 +55,16 @@ I downloaded the original python replication package from the [AER website](http
     Pkg.instantiate()
     ```
 
-5.  Run the *runfile.jl* that executes all the necessary functions to produce the paper's key figures and tables. 
+5. Run the *runfile.jl* that executes all the necessary functions to produce the paper's key figures and tables. 
 
     ```julia 
     include("runfile.jl")
     ```
     
-6.  The output will then be saved in the [*figures*](ReplicationFiles/figures) and [*tables*](ReplicationFiles/tables) folders, within the ReplicationFiles folder.
+6. The output will then be saved in the [*figures*](ReplicationFiles/figures) and [*tables*](ReplicationFiles/tables) folders, within the ReplicationFiles folder.
+
+7. To verify this you can delete all the figures inside their respective folders and then run <span style="color:green">**julia>**</span>
+ include(`"test/runtests.jl"`). This runs 14 tests that should all pass :white_check_mark:
 
 ## Replicated Figures and Tables
 The runfile.jl does the following:

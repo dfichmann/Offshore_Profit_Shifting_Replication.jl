@@ -2,7 +2,8 @@
 This function replicates table 5. The Table is saved in the folder "ReplicationFiles/tables" as a markdown file.
     ```julia
     table5()
-    
+    ```
+
     No arguments are needed for this function
     """
 function table5()

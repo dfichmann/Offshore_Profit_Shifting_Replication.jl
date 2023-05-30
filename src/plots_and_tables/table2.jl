@@ -2,6 +2,7 @@
 This function replicates table 2. The Table is saved in the folder "ReplicationFiles/tables" as a markdown file.
     ```julia
     table2()
+    ```
     
     No arguments are needed for this function
     """

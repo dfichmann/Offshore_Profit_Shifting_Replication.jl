@@ -4,6 +4,7 @@ This function replicates table 1. The Table is saved in the folder "ReplicationF
     # Usage
 ```julia
 table1()
+```
 
 No arguments are needed for this function
 """
