@@ -32,6 +32,4 @@ include("plots_and_tables/table2.jl")
 include("plots_and_tables/table5.jl")
 include("plots_and_tables/table6.jl")
 
-### include the testcode.jl file:
-include("test/runtests.jl")
 end
