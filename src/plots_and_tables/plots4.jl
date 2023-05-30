@@ -4,6 +4,7 @@ This function replicates a figure 4, which consists of two subplots. The figure 
     # Usage
     ```julia
     plots4()
+    ```
     
     No arguments are needed for this function
     """

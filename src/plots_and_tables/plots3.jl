@@ -14,6 +14,7 @@ This function uses the GR backend for generating plots and the Plots.jl package 
 # Usage
 ```julia
 plots3()
+```
 
 No arguments are needed for this function
 

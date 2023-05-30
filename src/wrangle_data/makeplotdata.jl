@@ -18,6 +18,7 @@ At the end, it returns four DataFrames: `public`, `adj_agg`, `adj_ind`, and `adj
 # Usage
 ```julia
 public, adj_agg, adj_ind, adj_tax = makeplotdata(public, adj_agg, adj_ind, adj_tax)
+```
 
 # Returns
 

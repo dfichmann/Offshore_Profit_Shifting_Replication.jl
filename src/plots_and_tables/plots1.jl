@@ -17,6 +17,7 @@ This function employs the GR backend for generating plots and uses the Plots.jl 
 # Usage
 ```julia
 plots1()
+```
 
 No arguments are needed for this function.
 """

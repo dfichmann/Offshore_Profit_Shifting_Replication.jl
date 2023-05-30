@@ -12,12 +12,11 @@ Specifically, the function does the following:
 
 # Usage
 ```julia
-panel_stats = makedataforplot2()
-
+panel_stats = makedataforplot2(boot)
+```
 Returns
 
 panel_stats: A DataFrame containing computed statistics for each Panel.
-This function takes no arguments.
     
 """
 function makedataforplot2(boot)

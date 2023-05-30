@@ -13,7 +13,7 @@ Calculates the logarithmic growth rate for a vector `x`. It does this by computi
 ```julia
 julia> logg([1, 2, 3, 4])
 3-element Array{Float64,1}:
-
+```
 """
 function logg(x::Vector)
     log.(x[2:end] ./ x[1:end-1])
@@ -83,7 +83,7 @@ function process_files(filenames)
 end
 
 """
-    makedataforplot8()
+    makedataforplot8(inds)
 
 Processes and merges several data files for use in plotting. The function reads, renames, and processes data from
 specified Excel and CSV files, and calculates additional columns for each industry group.

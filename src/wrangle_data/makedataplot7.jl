@@ -1,5 +1,5 @@
 """
-    makedataforplot7()
+    makedataforplot7(public)
 
 This function prepares data needed for Plot 7. It performs calculations on several variables such as `gdibusn`, `gdibusr`, `uprod_log`, `uprod_gr`, `uprod_cum`, `gvabusr_adj`, `gdibusr_adj`, `aprod_log`, `aprod_gr`, and `aprod_cum` from the `public` and `adj_agg` datasets. 
 
