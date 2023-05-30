@@ -24,26 +24,44 @@ I downloaded the original python replication package from the [AER website](http
 
 ## Requirements
 
-- Julia 1.8.5 or later
+- Written in Julia 1.8.5 and tested on Julia 1.9
 - Required Julia packages: DataFrames, Plots, Statistics, CSV, XLSX, Missings, Interpolations, Impute, DataFramesMeta
 
 ## How to Run
 
 1. Clone this repository to your local machine.
-2. Open Julia and navigate to the repository's directory.
-    ```julia            
-    cd("/path/to/Offshore_Profit_Shifting_Replication") 
+
+    ``` shell
+    git clone https://github.com/dfichmann/Offshore_Profit_Shifting_Replication.jl.git
     ```
+
+2. Open Julia and navigate to the repository's directory.
+
+    ``` julia
+    julia            
+    cd("/path/to/Offshore_Profit_Shifting_Replication") #replace with your path
+    ```
+
 3. Activate the package
-    ```julia            
+
+    ``` julia            
     using Pkg           
     Pkg.activate(".")
     ```
-4.  Run the *runfile.jl* that executes all the necessary functions to produce the paper's key figures and tables. 
+
+4. Install all recorded dependencies
+
+    ``` julia
+    Pkg.instantiate()
+    ```
+
+5.  Run the *runfile.jl* that executes all the necessary functions to produce the paper's key figures and tables. 
+
     ```julia 
     include("runfile.jl")
     ```
-5.  The output will then be saved in the [*figures*](ReplicationFiles/figures) and [*tables*](ReplicationFiles/tables) folders, within the ReplicationFiles folder.
+    
+6.  The output will then be saved in the [*figures*](ReplicationFiles/figures) and [*tables*](ReplicationFiles/tables) folders, within the ReplicationFiles folder.
 
 ## Replicated Figures and Tables
 The runfile.jl does the following:
