@@ -2,10 +2,10 @@ using Offshore_Profit_Shifting_Replication
 using Test
 using Markdown, DataFrames, Plots, Statistics, CSV, DataFrames, XLSX, Missings, Interpolations, Impute, DataFramesMeta
 
-    public = CSV.read("ReplicationFiles/data/aggregate.csv", DataFrame)
-    adj_agg = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNet.xlsx", "ADJNETSCALE"))
-    adj_ind = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetIndustry.xlsx", "ADJINDSCALE"))
-    adj_tax = DataFrame(XLSX.readtable("ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetHaven.xlsx", "ADJHVNSCALE"))
+    public = CSV.read(joinpath(@__DIR__, "..", "ReplicationFiles/data/aggregate.csv"), DataFrame)
+    adj_agg = DataFrame(XLSX.readtable(@__DIR__, "..", "ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNet.xlsx", "ADJNETSCALE"))
+    adj_ind = DataFrame(XLSX.readtable(@__DIR__, "..", "ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetIndustry.xlsx", "ADJINDSCALE"))
+    adj_tax = DataFrame(XLSX.readtable(@__DIR__, "..", "ReplicationFiles/0-confidential-data-replication-files/USDIA/OutputAdjNetHaven.xlsx", "ADJHVNSCALE"))
 
 @testset "Offshore_Profit_Shifting_Replication.jl" begin
 
